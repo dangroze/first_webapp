@@ -11,7 +11,13 @@ end
 get '/mood' do
   "You are moody"
 end
-get '/cat' do
+get '/random-cat' do
   @random_name = ["Wilfred","Sylvester","Grumpy"].sample
+  erb(:index)
+end
+get '/named-cat' do
+  p params
+  @random_name = params[:name]
+  @age = params[:age]
   erb(:index)
 end
